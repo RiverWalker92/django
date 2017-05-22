@@ -1,5 +1,48 @@
 
- /* jQuery Pre loader
+
+// google map
+var map = '';
+var center;
+
+function initialize() {
+    markLocation = new google.maps.LatLng(51.993491, 4.386561);
+
+    var mapOptions = {
+        zoom: 14,
+        center: markLocation,
+        scrollwheel: false
+    };
+
+
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    markerOptions = {
+        //label: "hello",
+        map: map,
+        position: markLocation,
+        title: "Surge-on",
+    }
+    marker = new google.maps.Marker(markerOptions);
+
+    google.maps.event.addDomListener(map, 'idle', function () {
+        calculateCenter();
+    });
+
+    google.maps.event.addDomListener(window, 'resize', function () {
+        map.setCenter(center);
+    });
+}
+
+function calculateCenter() {
+    center = map.getCenter();
+}
+
+function loadGoogleMap() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
+    document.body.appendChild(script);
+}
+/* jQuery Pre loader
   -----------------------------------------------*/
 $(window).load(function(){
     $('.preloader').fadeOut(1000); // set duration in brackets    
@@ -116,6 +159,7 @@ $(document).ready(function() {
       $('.flexslider').flexslider({
          animation: "slide"
       });
+
     });
   
 
@@ -144,6 +188,6 @@ $(document).ready(function() {
   /* wow
   -------------------------------*/
   new WOW({ mobile: false }).init();
-
+  loadGoogleMap();
   });
 
