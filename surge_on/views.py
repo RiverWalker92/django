@@ -15,11 +15,13 @@ def index(request):
     Contact = Layout.objects.get(title_id="contact")
     Features = Content.objects.get(title_id="features")
     Team = TeamMember.objects.all()
+    Team_title = Layout.objects.get(title_id="team_title")
     return render(request, 'index.html', {
         "Front_page_title":Front_page_title,
         "Features" : Features,
         "About":About,
         "Video":Video,
+        "Team_title":Team_title,
         "Team" : Team,
         "Contact":Contact,
     })
