@@ -214,7 +214,11 @@ a:focus {
 }
 #home .btn:hover,
 #home .btn:focus {
-  color: #c21500;
+  color: #333;
+}
+
+#home h2{
+    color: #eee;
 }
 
 
@@ -302,7 +306,7 @@ a:focus {
   transition: all 0.4s ease-in-out;
 }
 #feature .feature-icon:hover {
-  background-color: #c21500;
+  background-color: #139fc0;
 }
 #feature .feature-icon span {
   display: table-cell;

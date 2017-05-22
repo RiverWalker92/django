@@ -1,9 +1,15 @@
 from django.db import models
-from datetime import datetime  
+from datetime import datetime
+from tinymce.models import HTMLField
+
 
 class Layout(models.Model):
-    title = models.CharField(max_length=255, null=False, blank=True, unique=True)
-    text_block = models.TextField(max_length=5000, null=True, blank=True)
+    title_id = models.CharField(max_length=255, null=False, blank=True, unique=True)
+    main_title = models.CharField(max_length=255, null=True, blank=True)
+    sub_title = models.CharField(max_length=255, null=True, blank=True)
+    icon = models.CharField(max_length=255, null=True, blank=True, default="fa fa-play")
+    url = models.URLField(max_length=255, null=True, blank=True)
+    text_block = HTMLField(max_length=5000, null=True, blank=True)
 
 class Content(models.Model):
     title_id = models.CharField(max_length=255, null=True, blank=True)

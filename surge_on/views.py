@@ -9,15 +9,17 @@ from django.shortcuts import render
 
 
 def index(request):
-    WebsiteName = Layout.objects.get(title="WebsiteName")
-    SubTitle = Layout.objects.get(title="SubTitle")
+    Front_page_title = Layout.objects.get(title_id="front_page_title")
+    About = Layout.objects.get(title_id="about")
+    Video = Layout.objects.get(title_id="video")
+    Contact = Layout.objects.get(title_id="contact")
     Features = Content.objects.get(title_id="features")
-    TeamMember1 = TeamMember.objects.get(pk=1)
-    team = TeamMember.objects.all()
+    Team = TeamMember.objects.all()
     return render(request, 'index.html', {
-        "SubTitle":SubTitle,
-        "WebsiteName":WebsiteName,
+        "Front_page_title":Front_page_title,
         "Features" : Features,
-        "TeamMember1" : TeamMember1,
-        "team" : team,
+        "About":About,
+        "Video":Video,
+        "Team" : Team,
+        "Contact":Contact,
     })

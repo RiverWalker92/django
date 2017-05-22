@@ -5,8 +5,8 @@ from .models import Layout, Content, SmallContent, TeamMember
 
 
 class LayoutAdmin(admin.ModelAdmin):
-    list_display = ("title",)
-    search_fields = ["title"]
+    list_display = ("title_id",)
+    search_fields = ["title_id"]
 
 admin.site.register(Layout, LayoutAdmin)
 
