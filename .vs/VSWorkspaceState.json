@@ -2,12 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\management",
+    "\\management\\migrations",
+    "\\media",
     "\\static",
     "\\static\\css",
-    "\\static\\js",
     "\\surge_on",
     "\\templates"
   ],
-  "SelectedNode": "\\static\\js\\custom.js",
+  "SelectedNode": "\\surge_on\\views.py",
   "PreviewInSolutionExplorer": false
 }
