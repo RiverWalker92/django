@@ -340,6 +340,17 @@ a:focus {
   padding-bottom: 2px;
 }
 
+#about .text_block {
+    max-height: 100px;
+    overflow: hidden;
+    transition: max-height 2s ease-out;
+}
+
+    #about .text_block:hover {
+        max-height: 1000px;
+        transition: max-height 3s ease-in;
+    }
+
 
 
 /* Video section  */
