@@ -23,6 +23,8 @@ class SmallContent(models.Model):
     icon = models.CharField(max_length=255, null=True, blank=True)
     #price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True )
     #photo = models.ImageField(upload_to='team', null=True, blank=True)
+    def fade_in_time(self):
+        return self.pk * 0.3
 
 class TeamMember(models.Model):
     main_title = models.CharField(max_length=255, null=False, blank=False, unique=True)
@@ -35,3 +37,5 @@ class TeamMember(models.Model):
     url3 = models.URLField(max_length=255, null=True, blank=True)
     #price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True )
     photo = models.ImageField(upload_to='team', null=True, blank=True)
+    def fade_in_time(self):
+        return self.pk * 0.3
